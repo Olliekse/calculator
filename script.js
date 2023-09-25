@@ -1,23 +1,33 @@
+let num1;
+let num2;
+let op;
+
 const add = (num1, num2) => {
   return num1 + num2;
 };
-
-console.log(add(5, 2));
 
 const subtract = (num1, num2) => {
   return num1 - num2;
 };
 
-console.log(subtract(5, 2));
-
 const multiply = (num1, num2) => {
   return num1 * num2;
 };
-
-console.log(multiply(5, 2));
 
 const divide = (num1, num2) => {
   return num1 / num2;
 };
 
-console.log(divide(4, 2));
+const operate = (num1, op, num2) => {
+  if (op === "+") {
+    return add(num1, num2);
+  } else if (op === "-") {
+    return subtract(num1, num2);
+  } else if (op === "*") {
+    return multiply(num1, num2);
+  } else if (op === "/") {
+    return divide(num1, num2);
+  }
+};
+
+console.log(operate(5, "+", 5));

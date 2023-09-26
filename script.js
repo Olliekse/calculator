@@ -34,9 +34,9 @@ const operate = (num1, op, num2) => {
   }
 };
 
-const nums = [1, 2, 3, 4, 5, 6, 7, 8, 9, ".", 0, "%"];
+const nums = [1, 2, 3, 4, 5, 6, 7, 8, 9, " ", 0, " ", "C", ".", "%"];
 
-const funcs = ["+", "-", "*", "/"];
+const funcs = ["+", "-", "*", "/", "="];
 
 const createBtns = () => {
   for (i = 0; i < nums.length; i++) {

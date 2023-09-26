@@ -1,6 +1,10 @@
-let num1;
-let num2;
-let op;
+let num1 = 5;
+let num2 = 5;
+let op = "+";
+
+const btnsContainer = document.querySelector(".ui__btns-container");
+const btnsNum = document.querySelector(".btns-num-container");
+const btnsFunc = document.querySelector(".btns-func-container");
 
 const add = (num1, num2) => {
   return num1 + num2;
@@ -30,4 +34,23 @@ const operate = (num1, op, num2) => {
   }
 };
 
-console.log(operate(5, "+", 5));
+const nums = [1, 2, 3, 4, 5, 6, 7, 8, 9, ".", 0, "%"];
+
+const funcs = ["+", "-", "*", "/"];
+
+const createBtns = () => {
+  for (i = 0; i < nums.length; i++) {
+    const btn = document.createElement("div");
+    btn.classList.add("btn", "btn_num");
+    btn.textContent = nums[i];
+    btnsNum.append(btn);
+  }
+};
+for (i = 0; i < funcs.length; i++) {
+  const btn = document.createElement("div");
+  btn.classList.add("btn", "btn_func");
+  btn.textContent = funcs[i];
+  btnsFunc.append(btn);
+}
+
+createBtns();

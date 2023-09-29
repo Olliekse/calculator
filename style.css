@@ -17,13 +17,13 @@
 }
 
 .ui__btns-container {
-  align-items: center;
-  justify-content: center;
   margin-top: 100px;
+  flex-wrap: wrap;
+  gap: 7px;
   padding: 10px;
   display: flex;
   width: 90%;
-  height: 90%;
+  height: 60%;
 }
 
 
@@ -36,11 +36,8 @@
   background-color: black;
   z-index: 2;
   color: white;
+  border-radius: 5px;
 
-}
-
-.btn_num, .btn_func {
-  color: white;
 }
 
 .ui__screen {
@@ -54,16 +51,7 @@
 
 }
 
-.btns-num-container {
-  display: flex;
-  flex-wrap: wrap;
-  width: 77%;
-  gap: 7px;
-}
-
-.btns-func-container {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 7px;
-  width: 23%;
+.ui__screen-digits {
+  margin: 5px;
+  font-size: 27px;
 }

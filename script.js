@@ -93,6 +93,10 @@ const createBtns = () => {
         screen.textContent = operate(num1, operator, num2);
         console.log(operate(num1, operator, num2));
         inputSequence = 0;
+      } else if (input === "C") {
+        screen.textContent = 0;
+        screenSequence = "";
+        inputSequence = 0;
       }
     });
   }

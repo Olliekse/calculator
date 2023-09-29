@@ -2,11 +2,6 @@
 
 This is a basic calculator application that allows you to perform simple arithmetic operations like addition, subtraction, multiplication, and division. The calculator interface is built using HTML and CSS, with the application logic implemented using JavaScript.
 
-## How to Use
-
-- Clone the repository on your local machine using `git clone https://github.com/<username>/<repository-name>.git`.
-- Open `index.html` in your web browser to launch the application.
-
 ## Features
 
 - The calculator has a simple UI with a screen to display the numbers and buttons to input the operations and operands.

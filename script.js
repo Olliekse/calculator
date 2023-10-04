@@ -40,12 +40,8 @@ buttons.forEach((button) => {
       stack = [];
       displayValue = "";
       display.value = displayValue;
-    } else if (
-      value === "+" ||
-      value === "-" ||
-      value === "*" ||
-      value === "/"
-    ) {
+    }
+    if (value === "+" || value === "-" || value === "*" || value === "/") {
       if (displayValue !== "") {
         stack.push(parseFloat(displayValue));
         displayValue = "";
@@ -67,33 +63,43 @@ buttons.forEach((button) => {
         stack.push(result);
         display.value = result;
       }
-      stack.push(value);
+      if (!isNaN(stack[stack.length - 1])) {
+        stack.push(value);
+      }
     } else if (value === "=") {
       if (displayValue !== "") {
         stack.push(parseFloat(displayValue));
         displayValue = "";
       }
       let result;
-      while (stack.length >= 3) {
-        const num2 = stack.pop();
-        const operator = stack.pop();
-        const num1 = stack.pop();
+      if (stack.length >= 3) {
+        while (stack.length >= 3) {
+          const num2 = stack.pop();
+          const operator = stack.pop();
+          const num1 = stack.pop();
 
-        if (operator === "+") {
-          result = num1 + num2;
-        } else if (operator === "-") {
-          result = num1 - num2;
-        } else if (operator === "*") {
-          result = num1 * num2;
-        } else if (operator === "/") {
-          result = num1 / num2;
+          if (operator === "+") {
+            result = num1 + num2;
+          } else if (operator === "-") {
+            result = num1 - num2;
+          } else if (operator === "*") {
+            result = num1 * num2;
+          } else if (operator === "/") {
+            result = num1 / num2;
+          }
+          stack.push(result);
         }
-        stack.push(result);
+        if (result !== Infinity) {
+          display.value = Math.round(result);
+        } else {
+          display.value = "Impossible!";
+        }
       }
-      display.value = result;
     } else {
-      displayValue += value;
-      display.value = displayValue;
+      if (value !== "C") {
+        displayValue += value;
+        display.value = displayValue;
+      }
     }
 
     // console logs
